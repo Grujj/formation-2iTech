@@ -5,18 +5,20 @@ import java.util.ArrayList;
 
 public class Point2D {
 
-    private int x;
-    private int y;
-    private static int compteur;
+    private Integer x;
+    private Integer y;
+    private static Integer compteur = 0;
 
     public Point2D(){
-        compteur++;
+        this.setX(0);
+        this.setY(0);
+        Point2D.compteur += 1;
     }
     
-    public Point2D(int x, int y){
-        setX(x);
-        setY(y);
-        compteur++;
+    public Point2D(Integer x, Integer y){
+        this.setX(x);
+        this.setY(y);
+        Point2D.compteur += 1;
     }
 
     public void afficher(){
@@ -28,7 +30,7 @@ public class Point2D {
      * @param dX : int
      * @param dY : int
      */
-    public void translater(int dX, int dY){
+    public void translater(Integer dX, Integer dY){
         setX(getX() + dX);
         setY(getY() + dY);
     }
