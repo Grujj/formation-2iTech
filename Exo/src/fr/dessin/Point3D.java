@@ -19,9 +19,23 @@ public class Point3D extends Point2D {
     }
 
     public void translater(Integer dX, Integer dY, Integer dZ){
-        this.setX(getX() + dX);
-        this.setY(getY() + dY);
+        super.translater(dX, dY);
         this.setZ(getZ() + dZ);
+    }
+
+    @Override
+    public String toString(){
+        return super.toString();
+    }
+
+    @Override
+    public int hashCode(){
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object object){
+        return super.equals(object);
     }
 
     public Integer getZ() {
