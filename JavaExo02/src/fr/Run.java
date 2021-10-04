@@ -12,9 +12,12 @@ public class Run {
         point1.translater(2, 2);
         point1.afficher();
 
-        System.out.println("Point 2");
+        System.out.println("Point 2 :");
         point2.afficher();
         point2.translater(3, 3);
         point2.afficher();
+
+        System.out.println("Compteur : ");
+        Point2D.getCompteur();
     }
 }

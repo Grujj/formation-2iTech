@@ -7,29 +7,34 @@ public class Point2D {
 
     private int x;
     private int y;
+    private static int compteur;
 
     public Point2D(){
-
+        compteur++;
     }
     
     public Point2D(int x, int y){
         setX(x);
         setY(y);
+        compteur++;
     }
 
     public void afficher(){
-        System.out.println(getX());
-        System.out.println(getY());
+        System.out.println("[" + getX() + ", " + getY() + "]");
     }
 
     /**
-     * Methode publique qui permet de translater
+     * Methode publique qui permet de translater un point
      * @param dX : int
      * @param dY : int
      */
     public void translater(int dX, int dY){
         setX(getX() + dX);
         setY(getY() + dY);
+    }
+
+    public static void getCompteur(){
+        System.out.println(compteur);
     }
 
     public int getX() {
