@@ -18,10 +18,10 @@ public class CompteASeuil extends Compte{
     @Override
     public void retirer(double uneValeur){
 
-        double montant = getSolde() - uneValeur;
+        double montant = this.getSolde() - uneValeur;
 
         if(montant > seuil)
-            this.setSolde(montant);
+            super.retirer(uneValeur);
     }
 
     @Override

@@ -42,7 +42,7 @@ public class Compte {
         return solde;
     }
 
-    protected void setSolde(Double solde) {
+    private void setSolde(Double solde) {
         this.solde = solde;
     }
 }
