@@ -2,12 +2,13 @@ package fr;
 
 import fr.banque.Client;
 import fr.banque.Compte;
+import fr.banque.CompteASeuil;
 import fr.dessin.Point2D;
 import fr.dessin.Point3D;
 
 public class Run {
     public static void main(String[] args){
-        Run.javaExo6();
+        Run.javaExo7();
     }
 
     public static void javaExo1a5(){
@@ -30,13 +31,23 @@ public class Run {
 
     public static void javaExo6(){
 
-        Client client = new Client();
+        /*Client client = new Client();
         client.ajouterCompte(new Compte());
         client.ajouterCompte(null);
         client.ajouterCompte(new Compte(123, 500D));
         client.ajouterCompte(new Compte());
         client.ajouterCompte(new Compte(345, 750D));
 
+        System.out.println(client.toString());*/
+    }
+
+    public static void javaExo7(){
+
+        Client client = new Client();
+        client.ajouterCompte(new CompteASeuil(155, 500D, 250D));
+        client.getCompte(155).retirer(50D);
+        client.ajouterCompte(new CompteASeuil(156, 500D, 250D));
+        client.getCompte(156).retirer(300D);
         System.out.println(client.toString());
     }
 }

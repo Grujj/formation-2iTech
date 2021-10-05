@@ -6,8 +6,8 @@ public class Client {
 
     private String nom;
     private String prenom;
-    private Integer age;
-    private Integer numero;
+    private int age;
+    private int numero;
     private Compte[] comptes = new Compte[5];
 
     public Client(){
@@ -72,7 +72,7 @@ public class Client {
      * @return : boolean
      */
     private boolean compteExiste(Compte compte, int unNumero){
-        return compte != null && compte.getNumero() != null && compte.getNumero() == unNumero;
+        return compte != null && compte.getNumero() == unNumero;
     }
 
     @Override

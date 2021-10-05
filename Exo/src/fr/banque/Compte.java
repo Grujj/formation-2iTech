@@ -18,7 +18,7 @@ public class Compte {
         this.setSolde(this.getSolde() + unMontant);
     }
 
-    public void retirer(Double unMontant){
+    public void retirer(double unMontant){
         this.setSolde(this.getSolde() - unMontant);
     }
 
@@ -30,7 +30,7 @@ public class Compte {
                 '}';
     }
 
-    public Integer getNumero() {
+    public int getNumero() {
         return numero;
     }
 
@@ -38,11 +38,11 @@ public class Compte {
         this.numero = numero;
     }
 
-    public Double getSolde() {
+    public double getSolde() {
         return solde;
     }
 
-    private void setSolde(Double solde) {
+    protected void setSolde(Double solde) {
         this.solde = solde;
     }
 }
