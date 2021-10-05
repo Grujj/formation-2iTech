@@ -1,6 +1,8 @@
-package fr.banque;
+package fr.banque.compteRemunere;
 
-public class CompteRemunere extends Compte{
+import fr.banque.Compte;
+
+public class CompteRemunere extends Compte {
 
     /* Valeur 0 a 1 */
     private double taux;

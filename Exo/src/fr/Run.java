@@ -1,8 +1,7 @@
 package fr;
 
 import fr.banque.Client;
-import fr.banque.Compte;
-import fr.banque.CompteASeuil;
+import fr.banque.compteASeuil.CompteASeuil;
 import fr.dessin.Point2D;
 import fr.dessin.Point3D;
 

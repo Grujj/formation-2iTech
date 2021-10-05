@@ -1,6 +1,9 @@
-package fr.banque;
+package fr.banque.compteASeuil;
 
-public class CompteASeuil extends Compte{
+import fr.banque.Compte;
+import fr.banque.compteRemunere.ICompteRemunere;
+
+public class CompteASeuil extends Compte implements ICompteASeuil {
 
     private double seuil;
 
@@ -22,6 +25,16 @@ public class CompteASeuil extends Compte{
 
         if(montant > seuil)
             super.retirer(uneValeur);
+    }
+
+    @Override
+    public double getSeuil() {
+        return this.getSeuil();
+    }
+
+    @Override
+    public void setSeuil(double unSeuil) {
+        this.seuil = unSeuil;
     }
 
     @Override
