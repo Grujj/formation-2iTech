@@ -75,6 +75,17 @@ public class Client {
         return compte != null && compte.getNumero() != null && compte.getNumero() == unNumero;
     }
 
+    @Override
+    public String toString() {
+        return "Client{" +
+                "nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", age=" + age +
+                ", numero=" + numero +
+                ", comptes=" + Arrays.toString(comptes) +
+                '}';
+    }
+
     public String getNom() {
         return nom;
     }

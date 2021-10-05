@@ -6,10 +6,11 @@ public class Main {
 
         Client client = new Client();
         client.ajouterCompte(new Compte());
+        client.ajouterCompte(null);
         client.ajouterCompte(new Compte(123, 500D));
         client.ajouterCompte(new Compte());
+        client.ajouterCompte(new Compte(345, 750D));
 
-        System.out.println(client.getCompte(345));
-        System.out.println(client.getCompte(123).toString());
+        System.out.println(client.toString());
     }
 }

@@ -23,8 +23,11 @@ public class Compte {
     }
 
     @Override
-    public String toString(){
-        return "Compte numero : " + getNumero() + ", solde : " + getSolde();
+    public String toString() {
+        return "Compte{" +
+                "numero=" + numero +
+                ", solde=" + solde +
+                '}';
     }
 
     public Integer getNumero() {
