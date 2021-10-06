@@ -1,6 +1,8 @@
 package fr.banque;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Client {
 
@@ -26,7 +28,7 @@ public class Client {
      *
      * @param unCompte : Compte
      */
-    public void ajouterCompte(Compte unCompte){
+    public void ajouterCompte(Compte unCompte) throws BanqueException {
 
         /* Boucle dans le tableau de comptes */
         for(int i = 0; i < this.comptes.length; i++){
@@ -39,6 +41,10 @@ public class Client {
                 return;
             }
         }
+
+        List<String> list = new ArrayList<>();
+
+        throw new BanqueException("Plus de place disponible pour un compte");
     }
 
     /**

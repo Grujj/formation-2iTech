@@ -1,5 +1,6 @@
 package fr;
 
+import fr.banque.BanqueException;
 import fr.banque.Client;
 import fr.banque.compteASeuil.CompteASeuil;
 import fr.dessin.Point2D;
@@ -40,13 +41,20 @@ public class Run {
         System.out.println(client.toString());*/
     }
 
-    public static void javaExo7(){
+    public static void javaExo7() {
 
         Client client = new Client();
-        client.ajouterCompte(new CompteASeuil(155, 500D, 250D));
-        client.getCompte(155).retirer(50D);
-        client.ajouterCompte(new CompteASeuil(156, 500D, 250D));
-        client.getCompte(156).retirer(300D);
-        System.out.println(client.toString());
+
+        try{
+            client.ajouterCompte(new CompteASeuil(155, 500D, 250D));
+            client.getCompte(155).retirer(50D);
+            client.ajouterCompte(new CompteASeuil(156, 500D, 250D));
+            client.getCompte(156).retirer(300D);
+        } catch(BanqueException e){
+            e.printStackTrace();
+        }
+        finally {
+            System.out.println(client.toString());
+        }
     }
 }

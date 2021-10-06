@@ -18,7 +18,7 @@ public class Compte {
         this.setSolde(this.getSolde() + unMontant);
     }
 
-    public void retirer(double unMontant){
+    public void retirer(double unMontant) throws BanqueException {
         this.setSolde(this.getSolde() - unMontant);
     }
 

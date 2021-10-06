@@ -1,5 +1,6 @@
 package fr.banque.compteASeuil;
 
+import fr.banque.BanqueException;
 import fr.banque.Compte;
 import fr.banque.compteRemunere.ICompteRemunere;
 
@@ -19,12 +20,14 @@ public class CompteASeuil extends Compte implements ICompteASeuil {
     //endregion
 
     @Override
-    public void retirer(double uneValeur){
+    public void retirer(double uneValeur) throws BanqueException{
 
         double montant = this.getSolde() - uneValeur;
 
         if(montant > seuil)
             super.retirer(uneValeur);
+        else
+            throw new BanqueException("Impossible de depasser le seuil minimum");
     }
 
     @Override
