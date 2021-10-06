@@ -23,7 +23,7 @@ public class Client {
     public void ajouterCompte(Compte unCompte) {
 
         /* Boucle dans le tableau de comptes */
-        this.comptes.put(this.comptes.size(), unCompte);
+        this.comptes.put(unCompte.getNumero(), unCompte);
     }
 
     /**
@@ -35,17 +35,7 @@ public class Client {
      */
     public Compte getCompte(int unNumero){
 
-        /* Boucle dans le tableau de comptes */
-        for (Map.Entry<Integer, Compte> entry : this.comptes.entrySet()) {
-
-            /* Si un compte existe avec ce numero */
-            if (compteExiste(entry.getValue(), unNumero))
-
-                /* Retourne le compte et stop la boucle */
-                return entry.getValue();
-        }
-
-        return null;
+        return this.getComptes().get(unNumero);
     }
 
     /**
