@@ -1,8 +1,7 @@
 package fr.banque;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Client {
 
@@ -10,17 +9,10 @@ public class Client {
     private String prenom;
     private int age;
     private int numero;
-    private Compte[] comptes = new Compte[5];
+    private Map<Integer, Compte> comptes = new HashMap<>();
 
     public Client(){
 
-    }
-
-    public Client(String nom, String prenom, Integer age, Integer numero){
-        this.setNom(nom);
-        this.setPrenom(prenom);
-        this.setAge(age);
-        this.setNumero(numero);
     }
 
     /**
@@ -31,18 +23,16 @@ public class Client {
     public void ajouterCompte(Compte unCompte) throws BanqueException {
 
         /* Boucle dans le tableau de comptes */
-        for(int i = 0; i < this.comptes.length; i++){
+        for(int i = 0; i < this.comptes.size(); i++){
 
             /* Si une place est disponible pour le compte */
-            if(this.comptes[i] == null){
+            if(this.comptes.get(i) == null){
 
                 /* Ajoute le compte et stop la boucle */
-                this.comptes[i] = unCompte;
+                this.comptes.put(i, unCompte);
                 return;
             }
         }
-
-        List<String> list = new ArrayList<>();
 
         throw new BanqueException("Plus de place disponible pour un compte");
     }
@@ -57,13 +47,13 @@ public class Client {
     public Compte getCompte(int unNumero){
 
         /* Boucle dans le tableau de comptes */
-        for(int i = 0; i < this.comptes.length; i++){
+        for (Map.Entry<Integer, Compte> entry : this.comptes.entrySet()) {
 
             /* Si un compte existe avec ce numero */
-            if(compteExiste(this.comptes[i], unNumero))
+            if (compteExiste(entry.getValue(), unNumero))
 
                 /* Retourne le compte et stop la boucle */
-                return this.comptes[i];
+                return entry.getValue();
         }
 
         return null;
@@ -88,7 +78,7 @@ public class Client {
                 ", prenom='" + prenom + '\'' +
                 ", age=" + age +
                 ", numero=" + numero +
-                ", comptes=" + Arrays.toString(comptes) +
+                ", comptes=" + comptes.toString() +
                 '}';
     }
 
@@ -124,11 +114,11 @@ public class Client {
         this.numero = numero;
     }
 
-    public Compte[] getComptes() {
+    public Map<Integer, Compte> getComptes() {
         return comptes;
     }
 
-    private void setComptes(Compte[] comptes) {
+    private void setComptes(Map<Integer, Compte> comptes) {
         this.comptes = comptes;
     }
 }
