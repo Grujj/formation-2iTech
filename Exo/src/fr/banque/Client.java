@@ -20,21 +20,10 @@ public class Client {
      *
      * @param unCompte : Compte
      */
-    public void ajouterCompte(Compte unCompte) throws BanqueException {
+    public void ajouterCompte(Compte unCompte) {
 
         /* Boucle dans le tableau de comptes */
-        for(int i = 0; i < this.comptes.size(); i++){
-
-            /* Si une place est disponible pour le compte */
-            if(this.comptes.get(i) == null){
-
-                /* Ajoute le compte et stop la boucle */
-                this.comptes.put(i, unCompte);
-                return;
-            }
-        }
-
-        throw new BanqueException("Plus de place disponible pour un compte");
+        this.comptes.put(this.comptes.size(), unCompte);
     }
 
     /**
